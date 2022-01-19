@@ -22,7 +22,7 @@ fun setMapDimensions(file: File): Pair<Int, Int> {
 fun main() {
     val file = File("src/input.txt")
     val (row, col) = setMapDimensions(file)
-    val map = Array(row) { Array(col) { Pair(0, true) } }
+    val map = Array(row) { Array(col) { Pair(0, true) } } //[value, isLowPoint?]
     val scanner = Scanner(file)
 
     var i = 0
@@ -35,7 +35,7 @@ fun main() {
         i++
     }
 
-    for (i in 0 until row) {
+    for (i in 0 until row) { //iterate through every matrix element and compare it to the closest 4 neighbors (up, down, left, right)
         for (j in 0 until col) {
             if (i > 0) if (map[i][j].first >= map[i - 1][j].first) map[i][j] = map[i][j].copy(second = false)
             if (i < row - 1) if (map[i][j].first >= map[i + 1][j].first) map[i][j] = map[i][j].copy(second = false)
