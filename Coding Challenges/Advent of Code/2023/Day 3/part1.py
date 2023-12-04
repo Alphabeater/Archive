@@ -26,7 +26,7 @@ for i, line in enumerate(lines):
         num = match.group()
 
         if valid_part_num(i - 1, i + 1, start - 1, end + 1):
-            print(f"Line {i + 1}, Match: {num}, Indices: ({start}, {end}), sum:{s}")  # for debugging purposes
+            # print(f"Line {i + 1}, Match: {num}, Indices: ({start}, {end}), sum:{s}")  # for debugging purposes
             s += int(num)
 
         # line = line[:start] + ''.join(['.' for n in num]) + line[end:]  # for debugging purposes
